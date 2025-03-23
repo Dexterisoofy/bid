@@ -44,8 +44,8 @@
 
         // Generate a random number between 0 and 1.
         // If it's below 0.10, the bid is multiplied by 5.
-        if (Math.random() < 0.10) {
-          const winAmount = bidAmount * 5;
+        if (Math.random() < 0.04) {
+          const winAmount = bidAmount * 25;
           resultDiv.textContent = "YOU WON $" + winAmount.toFixed(2) + "!";
         } else {
           resultDiv.textContent = "Sorry, better luck next time.";
