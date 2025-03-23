@@ -17,7 +17,7 @@ document.getElementById("bidButton").addEventListener("click", () => {
 
     // 10% chance to win
     if (Math.random() < 0.10) {
-        const winAmount = bidAmount * 5;
+        const winAmount = bidAmount * 10;
         moneyWon += winAmount;
         resultDiv.textContent = "YOU WON $" + winAmount.toFixed(2) + "!";
         
