@@ -1,4 +1,8 @@
 const bidButton = document.getElementById("bidButton");
+const closePopup = document.getElementById("closePopup");
+const popup = document.getElementById("popup");
+const popupContent = document.getElementById("popupContent");
+
 let totalMoneyWon = 0;
 let totalMoneyLost = 0;
 
@@ -34,4 +38,22 @@ bidButton.addEventListener("click", () => {
   moneyWonDiv.textContent = "Total Money Won: $" + totalMoneyWon.toFixed(2);
   moneyLostDiv.textContent = "Total Money Lost: $" + totalMoneyLost.toFixed(2);
   netResultDiv.textContent = "Net Result: $" + netAmount.toFixed(2);
+
+  if (Math.random() < 0.10) {
+    // Show popup and reset values
+    popupContent.innerHTML = `
+      <p>Total Money Won: $${totalMoneyWon.toFixed(2)}</p>
+      <p>Total Money Lost: $${totalMoneyLost.toFixed(2)}</p>
+      <p>Net Result: $${netAmount.toFixed(2)}</p>
+    `;
+    popup.style.display = 'block';
+
+    // Reset values
+    totalMoneyWon = 0;
+    totalMoneyLost = 0;
+  }
+});
+
+closePopup.addEventListener("click", () => {
+  popup.style.display = 'none';
 });
