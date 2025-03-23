@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Bid and Win</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
-        }
-        #result {
-            font-size: 2em;
-            margin-top: 20px;
-            color: green;
-        }
-        .error {
-            color: red;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+      }
+      #result {
+        font-size: 2em;
+        margin-top: 20px;
+        color: green;
+      }
+      .error {
+        color: red;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Try Your Luck! Place Your Bid</h1>
     <div>
-        <input type="number" id="bidInput" placeholder="Enter your bid" step="0.01">
-        <button id="bidButton">Bid</button>
+      <input type="number" id="bidInput" placeholder="Enter your bid" step="0.01" />
+      <button id="bidButton">Bid</button>
     </div>
     <div id="result"></div>
-    <h2>Session Stats</h2>
-    <p id="stats">Money Won: $0.00 | Money Lost: $0.00</p>
+    <div id="netResult"></div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
