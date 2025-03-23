@@ -1,36 +1,32 @@
-let moneyWon = 0;
-let moneyLost = 0;
+const bidButton = document.getElementById("bidButton");
+let totalMoneyWon = 0;
+let totalMoneyLost = 0;
 
-document.getElementById("bidButton").addEventListener("click", () => {
-    const bidInput = document.getElementById("bidInput");
-    const resultDiv = document.getElementById("result");
-    const statsDiv = document.getElementById("stats");
-    const bidAmount = parseFloat(bidInput.value);
+bidButton.addEventListener("click", () => {
+  const bidInput = document.getElementById("bidInput");
+  const resultDiv = document.getElementById("result");
+  const netResultDiv = document.getElementById("netResult");
+  const bidAmount = parseFloat(bidInput.value);
+  resultDiv.classList.remove("error");
 
-    resultDiv.classList.remove("error");
+  // Validate input
+  if (isNaN(bidAmount) || bidAmount < 0.01) {
+    resultDiv.textContent = "Please enter a valid bid amount.";
+    resultDiv.classList.add("error");
+    return;
+  }
 
-    if (isNaN(bidAmount) || bidAmount <= 0) {
-        resultDiv.textContent = "Please enter a valid bid amount.";
-        resultDiv.classList.add("error");
-        return;
-    }
+  // Generate a random number between 0 and 1.
+  // If it's below 0.10, the bid is multiplied by 5.
+  if (Math.random() < 0.10) {
+    const winAmount = bidAmount * 5;
+    totalMoneyWon += winAmount;
+    resultDiv.textContent = "YOU WON $" + winAmount.toFixed(2) + "!";
+  } else {
+    totalMoneyLost += bidAmount;
+    resultDiv.textContent = "Sorry, better luck next time.";
+  }
 
-    // 10% chance to win
-    if (Math.random() < 0.10) {
-        const winAmount = bidAmount * 5;
-        moneyWon += winAmount;
-        resultDiv.textContent = "YOU WON $" + winAmount.toFixed(2) + "!";
-        
-        // Display current session statistics
-        alert("Money Won: $" + moneyWon.toFixed(2) + " | Money Lost: $" + moneyLost.toFixed(2));
-
-        // Reset session statistics
-        moneyWon = 0;
-        moneyLost = 0;
-    } else {
-        moneyLost += bidAmount;
-        resultDiv.textContent = "Sorry, better luck next time.";
-    }
-
-    statsDiv.textContent = "Money Won: $" + moneyWon.toFixed(2) + " | Money Lost: $" + moneyLost.toFixed(2);
+  const netAmount = totalMoneyWon - totalMoneyLost;
+  netResultDiv.textContent = "Net Result: $" + netAmount.toFixed(2);
 });
