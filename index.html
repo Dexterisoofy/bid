@@ -36,7 +36,7 @@
         resultDiv.classList.remove("error");
         
         // Validate input
-        if (isNaN(bidAmount) || bidAmount <= 0.0999) {
+        if (isNaN(bidAmount) || bidAmount <= 0.09) {
           resultDiv.textContent = "Please enter a valid bid amount.";
           resultDiv.classList.add("error");
           return;
