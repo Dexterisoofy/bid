@@ -20,6 +20,13 @@ document.getElementById("bidButton").addEventListener("click", () => {
         const winAmount = bidAmount * 5;
         moneyWon += winAmount;
         resultDiv.textContent = "YOU WON $" + winAmount.toFixed(2) + "!";
+        
+        // Display current session statistics
+        alert("Money Won: $" + moneyWon.toFixed(2) + " | Money Lost: $" + moneyLost.toFixed(2));
+
+        // Reset session statistics
+        moneyWon = 0;
+        moneyLost = 0;
     } else {
         moneyLost += bidAmount;
         resultDiv.textContent = "Sorry, better luck next time.";
