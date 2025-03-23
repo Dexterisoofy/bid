@@ -16,6 +16,20 @@
       .error {
         color: red;
       }
+      #popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 2px solid black;
+        z-index: 1000;
+      }
+      #popup button {
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
@@ -28,6 +42,11 @@
     <div id="moneyWon"></div>
     <div id="moneyLost"></div>
     <div id="netResult"></div>
+
+    <div id="popup">
+      <div id="popupContent"></div>
+      <button id="closePopup">Close</button>
+    </div>
 
     <script src="script.js"></script>
   </body>
