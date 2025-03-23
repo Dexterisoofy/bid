@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bid and Win</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+      }
+      #result {
+        font-size: 2em;
+        margin-top: 20px;
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Try Your Luck! Place Your Bid</h1>
+    <div>
+      <input type="number" id="bidInput" placeholder="Enter your bid" step="0.01" />
+      <button id="bidButton">Bid</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+      const bidButton = document.getElementById("bidButton");
+
+      bidButton.addEventListener("click", () => {
+        const bidInput = document.getElementById("bidInput");
+        const resultDiv = document.getElementById("result");
+        const bidAmount = parseFloat(bidInput.value);
+        resultDiv.classList.remove("error");
+        
+        // Validate input
+        if (isNaN(bidAmount) || bidAmount <= 0) {
+          resultDiv.textContent = "Please enter a valid bid amount.";
+          resultDiv.classList.add("error");
+          return;
+        }
+
+        // Generate a random number between 0 and 1.
+        // If it's below 0.10, the bid is multiplied by 5.
+        if (Math.random() < 0.10) {
+          const winAmount = bidAmount * 5;
+          resultDiv.textContent = "YOU WON $" + winAmount.toFixed(2) + "!";
+        } else {
+          resultDiv.textContent = "Sorry, better luck next time.";
+        }
+      });
+    </script>
+  </body>
+</html>
