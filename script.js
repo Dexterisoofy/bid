@@ -5,7 +5,10 @@ let totalMoneyLost = 0;
 bidButton.addEventListener("click", () => {
   const bidInput = document.getElementById("bidInput");
   const resultDiv = document.getElementById("result");
+  const moneyWonDiv = document.getElementById("moneyWon");
+  const moneyLostDiv = document.getElementById("moneyLost");
   const netResultDiv = document.getElementById("netResult");
+
   const bidAmount = parseFloat(bidInput.value);
   resultDiv.classList.remove("error");
 
@@ -28,5 +31,7 @@ bidButton.addEventListener("click", () => {
   }
 
   const netAmount = totalMoneyWon - totalMoneyLost;
+  moneyWonDiv.textContent = "Total Money Won: $" + totalMoneyWon.toFixed(2);
+  moneyLostDiv.textContent = "Total Money Lost: $" + totalMoneyLost.toFixed(2);
   netResultDiv.textContent = "Net Result: $" + netAmount.toFixed(2);
 });
