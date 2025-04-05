@@ -19,6 +19,7 @@ document.getElementById("bidButton").addEventListener("click", () => {
     if (Math.random() < 0.10) {
         const winAmount = bidAmount * 10;
         moneyWon += winAmount;
+        moneyLost += bidAmount; // Subtract the bid amount from money lost
         resultDiv.textContent = "YOU WON $" + winAmount.toFixed(2) + "!";
         
         // Display current session statistics
