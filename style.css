@@ -1,7 +1,7 @@
 body {
     background-color: #e5e5f7 !important;
     opacity: 0.8 !important;
-    background-image: radial-gradient(circle at 0 0, transparent 0, #e5e5f7 10px), linear-gradient(#25d8af55, #25d8af) !important;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(to right, #25d8af 0%, #e5e5f7 100%) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
 }
