@@ -1,7 +1,6 @@
 body {
-    background-color: #e5e5f7 !important;
-    opacity: 0.8 !important;
-    background-image: linear-gradient(to right, #25d8af 0%, #e5e5f7 100%) !important;
-    background-repeat: no-repeat !important;
+    background-image: url('css-pattern-by-magicpattern.png') !important;
     background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important; /* This will make the background image fixed when scrolling */
 }
