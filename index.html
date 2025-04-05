@@ -5,13 +5,19 @@
     <title>Bid and Win</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
+            background-image: url('path/to/your/background.jpg') !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
         }
         .container {
             text-align: center;
@@ -19,14 +25,26 @@
             max-width: 400px;
             padding: 20px;
             box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        input, button {
+            font-size: 1.5em;
+            margin: 10px 0;
         }
         #result {
-            font-size: 2em;
+            font-size: 1.5em;
             margin-top: 20px;
             color: green;
         }
         .error {
             color: red;
+        }
+        #stats {
+            font-size: 1.2em;
         }
     </style>
 </head>
