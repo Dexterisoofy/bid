@@ -1,5 +1,5 @@
 body {
-    background-color: #e5e5f7;
-    opacity: 0.8;
-    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #25d8af55, #25d8af );
+    background-color: #e5e5f7 !important;
+    opacity: 0.8 !important;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 10px), repeating-linear-gradient(#25d8af55, #25d8af) !important;
 }
